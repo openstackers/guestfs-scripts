@@ -20,7 +20,7 @@ while getopts ":i:m:p:gv" opt; do
       ;;
     g)
       echo "Guessing which filesystem to mount (this will take a while)"
-      FILESYSTEM=$(guestfish --rw -a /space/images/centos-6-cloud -i  list-filesystems | cut -d ':' -f 1)
+      FILESYSTEM=$(guestfish --rw -a $IMAGE -i list-filesystems | cut -d ':' -f 1)
      ;;
     :)
       echo "Option -$OPTARG requires an argument." >&2
